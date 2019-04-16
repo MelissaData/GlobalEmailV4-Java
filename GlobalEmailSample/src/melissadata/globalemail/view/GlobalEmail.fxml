@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="melissadata.globalemail.view.GlobalEmailController">
+    <center>
+        <TabPane fx:id="tabPane" prefHeight="323.0" prefWidth="674.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab fx:id="responseTabButtonArea" text="Response">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextArea fx:id="ResponseTextArea" layoutX="208.0" layoutY="58.0" prefHeight="471.0" prefWidth="600.0" promptText="Send a request..." AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+    <left>
+        <AnchorPane prefHeight="449.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="inputLicenseKeyText" layoutX="12.0" layoutY="47.0" prefHeight="25.0" prefWidth="180.0" promptText="License Key..." />
+                <Label contentDisplay="CENTER" layoutX="30.0" layoutY="7.0" text="Web Service Input" textAlignment="CENTER" underline="true">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="82.0" layoutY="89.0" text="Input" textAlignment="CENTER" underline="true">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="inputEmailText" layoutX="10.0" layoutY="118.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter Email..." />
+                <ButtonBar layoutY="446.0" prefHeight="40.0" prefWidth="110.0">
+                    <buttons>
+                        <Button fx:id="buttonClear" mnemonicParsing="false" text="Clear" />
+                        <Button fx:id="buttonSend" mnemonicParsing="false" prefHeight="25.0" text="Send" />
+                    </buttons>
+                </ButtonBar>
+                <RadioButton fx:id="jsonResponseFormatRadio" layoutX="22.0" layoutY="429.0" mnemonicParsing="false" text="JSON" />
+                <RadioButton layoutX="103.0" layoutY="429.0" mnemonicParsing="false" text="XML" fx:id="xmlResponseFormatRadio" />
+                    <Label layoutX="68.0" layoutY="166.0" text="Options" underline="true">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+            </Label>
+                    <Label layoutX="25.0" layoutY="203.0" prefHeight="17.0" prefWidth="151.0" text="Verify Mailbox:" />
+                    <Label layoutX="26.0" layoutY="245.0" text="Domain Correction:" />
+                    <Label layoutX="26.0" layoutY="292.0" text="Time To Wait:" />
+                    <ComboBox fx:id="optionVerifyMailboxBox" layoutX="26.0" layoutY="220.0" onAction="#setOptionVerifyMailboxBox" prefWidth="150.0" />
+                    <ComboBox fx:id="optionDomainCorrectionBox" layoutX="26.0" layoutY="262.0" onAction="#setOptionDomainCorrectionBox" prefWidth="150.0" />
+                    <ComboBox fx:id="optionTimeToWaitBox" layoutX="26.0" layoutY="309.0" onAction="#setOptionTimeToWaitBox" prefWidth="150.0" />
+            </children>
+        </AnchorPane>
+    </left>
+    <bottom>
+        <TextArea fx:id="RequestTextArea" editable="false" prefHeight="100.0" prefWidth="600.0" promptText="Send a request..." wrapText="true" BorderPane.alignment="CENTER" />
+    </bottom>
+</BorderPane>
