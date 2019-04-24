@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="melissadata.globalemail.view.GlobalEmailController">
+<BorderPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="melissadata.globalemail.view.GlobalEmailController">
     <center>
         <TabPane fx:id="tabPane" prefHeight="323.0" prefWidth="674.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
             <tabs>
@@ -56,9 +56,12 @@
                             <Font size="18.0" />
                         </font>
             </Label>
-                    <Label layoutX="25.0" layoutY="203.0" prefHeight="17.0" prefWidth="151.0" text="Verify Mailbox:" />
+                    
+					<Label layoutX="26.0" layoutY="340.0" text="WhoIs Lookup Domain:" />
+					<Label layoutX="25.0" layoutY="203.0" prefHeight="17.0" prefWidth="151.0" text="Verify Mailbox:" />
                     <Label layoutX="26.0" layoutY="245.0" text="Domain Correction:" />
                     <Label layoutX="26.0" layoutY="292.0" text="Time To Wait:" />
+					<ComboBox fx:id="optionWhoIsBox" layoutX="26.0" layoutY="360.0" onAction="#setOptionWhoIsBox" prefWidth="150.0" />
                     <ComboBox fx:id="optionVerifyMailboxBox" layoutX="26.0" layoutY="220.0" onAction="#setOptionVerifyMailboxBox" prefWidth="150.0" />
                     <ComboBox fx:id="optionDomainCorrectionBox" layoutX="26.0" layoutY="262.0" onAction="#setOptionDomainCorrectionBox" prefWidth="150.0" />
                     <ComboBox fx:id="optionTimeToWaitBox" layoutX="26.0" layoutY="309.0" onAction="#setOptionTimeToWaitBox" prefWidth="150.0" />

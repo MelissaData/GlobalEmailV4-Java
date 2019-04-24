@@ -3,7 +3,7 @@ package melissadata.globalemail.view;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
+//import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TabPane;
@@ -15,7 +15,8 @@ import melissadata.globalemail.Main;
 
 public class GlobalEmailController  {
 
-    private Main main;
+    @SuppressWarnings("unused")
+	private Main main;
     private GlobalEmailOptions option;
 
     private GlobalEmailTransaction Transaction;
@@ -35,7 +36,9 @@ public class GlobalEmailController  {
     private TextField inputLicenseKeyText;
     @FXML
     private TextField inputEmailText;
-
+    
+    @FXML
+    private ComboBox<String> optionWhoIsBox;
     @FXML
     private ComboBox<String> optionVerifyMailboxBox;
     @FXML
@@ -117,6 +120,7 @@ public class GlobalEmailController  {
         optionVerifyMailboxBox.setItems(FXCollections.observableArrayList("", "Express", "Premium"));
         optionDomainCorrectionBox.setItems(FXCollections.observableArrayList("", "ON", "OFF"));
         optionTimeToWaitBox.setItems(FXCollections.observableArrayList("", "5", "15", "25", "45"));
+        optionWhoIsBox.setItems(FXCollections.observableArrayList("","ON","OFF"));
     }
 
     public void setOptionVerifyMailboxBox() {
@@ -125,6 +129,13 @@ public class GlobalEmailController  {
         updateRequestText();
         returnToConfiguration();
     }
+	
+	public void setOptionWhoIsBox(){
+		option.setOptionWhoIs(optionWhoIsBox.getValue());
+		Transaction.setOptions(option);
+		updateRequestText();
+		returnToConfiguration();
+	}
     public void setOptionDomainCorrectionBox() {
         option.setOptionDomainCorrection(optionDomainCorrectionBox.getValue());
         Transaction.setOptions(option);
@@ -201,5 +212,12 @@ public class GlobalEmailController  {
     public void setOptionTimeToWaitBox(ComboBox<String> optionTimeToWaitBox) {
         this.optionTimeToWaitBox = optionTimeToWaitBox;
     }
-
+	
+	public void setOptionWhoIsBox(ComboBox<String> optionWhoIsBox){
+		this.optionWhoIsBox = optionWhoIsBox;
+	}
+	
+	public ComboBox<String> getOptionWhoIsBox() {
+        return optionWhoIsBox;
+    }
 }

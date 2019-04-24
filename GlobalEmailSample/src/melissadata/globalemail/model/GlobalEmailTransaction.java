@@ -12,6 +12,7 @@ import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
 
+@SuppressWarnings("deprecation")
 public class GlobalEmailTransaction {
 	private final String endpoint;
 	private GlobalEmailOptions options;
@@ -48,7 +49,6 @@ public class GlobalEmailTransaction {
 				while ((inputLine = in.readLine()) != null) {
 					jsonResponse.append(inputLine);
 				}
-				@SuppressWarnings("deprecation")
 				JSONObject test = new JSONObject(jsonResponse.toString());
 				response = test.toString(10);
 			} else {
